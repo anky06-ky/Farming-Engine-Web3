@@ -1,0 +1,35 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "src/functions/**/*.ts",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/health",
+      "dest": "/src/functions/health.ts"
+    },
+    {
+      "src": "/api/mint",
+      "dest": "/src/functions/mint.ts"
+    },
+    {
+      "src": "/api/nfts",
+      "dest": "/src/functions/nfts.ts"
+    },
+    {
+      "src": "/api/zklogin-init",
+      "dest": "/src/functions/zklogin-init.ts"
+    },
+    {
+      "src": "/api/zklogin-status",
+      "dest": "/src/functions/zklogin-status.ts"
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  }
+}
+

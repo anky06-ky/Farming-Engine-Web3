@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: web3-backend
+    env: node
+    buildCommand: npm install && npm run build
+    startCommand: node server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      # Add your Sui environment variables here:
+      # - key: SUI_NETWORK
+      #   value: testnet
+      # - key: SUI_PACKAGE_ID
+      #   value: 0x5980397d5e926553837ce087fa7a6a13d4dfd054f6f764903482e8b5af990ed3
+      # - key: SUI_PRIVATE_KEY
+      #   value: your-private-key-base64
+    healthCheckPath: /api/health
+
